@@ -1,6 +1,6 @@
 // ===== Formular → VPS (GitHub Pages → LAMP) =====
 // Skift URL til din VPS endpoint
-const VPS_API_URL = 'https://76.13.133.224/api/form.php';
+const VPS_API_URL = 'http://76.13.133.224/api/form.php';
 
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
