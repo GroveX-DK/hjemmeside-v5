@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Om os - GroveX</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/grovex-logo.png" alt="GroveX logo" style="height: 38px;">
+      </a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <span></span><span></span><span></span><span></span>
+    </button>
+    <nav class="nav-drawer" id="navDrawer">
+      <a href="index.html">Forside</a>
+      <a href="om-os.html">Om os</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="#login">Login</a>
+    </nav>
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+  </header>
+  
+  <!-- Hero Image -->
+  <section class="about-hero-section">
+    <div class="about-hero-image">
+      <img src="assets/Hero image om os - Mand der sidder ved computer.png" alt="Om os hero image">
+    </div>          
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="stats-section">
+    <div class="stats-content">
+      <div class="stat-item stat-item-left">
+        <div style="display:inline-flex;align-items:baseline;">
+          <span id="countup" class="countup">93</span>
+          <script src="countup.js"></script>
+          <span class="stat-percent" style="margin-left:4px;">%</span>
+        </div>
+        <div class="stat-text">
+          <p class="typewriter-cursor typewriter-animation">Af restauranter har <span style="color:#497cff;">hjemmesider</span>, men kun...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="stats-section">
+    <div class="stats-content">
+      <div class="stat-item stat-item-right">
+        <div class="stat-text">
+          <p class="typewriter-cursor typewriter-animation">af dem har <span style="color:#497cff;">systemer</span> til at hjælpe dem</p>
+        </div>
+        <div style="display:inline-flex;align-items:baseline;">
+          <span id="countup" class="countup">57</span>
+          <script src="countup.js"></script>
+          <span class="stat-percent" style="margin-left:20px;">%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Typewriter Text Section -->
+  <section class="typewriter-section">
+    <div class="typewriter-text-container">
+      <p class="typewriter-cursor typewriter-animation">Fra kaos til <span style="color:#497cff;">kontrol</span> – digitale værktøjer til <span style="color:#497cff;">restauranter</span>, som bare virker.</p>
+    </div>
+  </section>
+
+  <!-- Expertise Section -->
+  <section class="expertise-section">
+    <div class="expertise-content">
+      <div class="expertise-flow">
+        <span class="expertise-heading">Vi har dygtig erfarenhed i</span>
+        <ul class="expertise-list">
+          <li>Kodning</li>
+          <li>Design</li>
+          <li>Automation</li>
+          <li>Hjemmesider</li>
+          <li>Besparenhed</li>
+          <li>Topkvalitet</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h4>Har du lyst til at høre om hvad vi kan gøre for dig?</h4>
+    <div class="contact-card">
+      <div class="contact-info">
+        <div class="info-box">
+          <span class="info-icon"><img src="assets/pngwing-com-1-20.png" alt="Email icon" style="width: 25px; height: 25px;"></span>
+          <span><a href="tel:#31#60571908">+45 60 57 19 08</a></span>
+        </div>
+        <div class="info-box">
+          <span class="info-icon"><img src="assets/node-22.png" alt="Email icon" style="width: 25px; height: 25px;"></span>
+          <span><a href="mailto:grovex.dk@gmail.com">grovex.dk@gmail.com</a> <br></span>
+        </div>
+      </div>
+      <div class="contact-divider">eller</div>
+      <form class="contact-form" id="contactForm">
+        <input type="text" id="name" placeholder="Navn" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <button type="submit">Udfyld så kontakter vi dig!</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="om-os.html">Om os</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="#login">Login</a>
+    </div>
+    <div class="footer-contact">
+      <a class="footer-email" href="mailto:grovex.dk@gmail.com">grovex.dk@gmail.com</a>
+      <a class="footer-phone" href="tel:#31#60571908">+45 60 57 19 08</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

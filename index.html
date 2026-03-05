@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GroveX</title>
+  <link rel="icon" type="image/png" href="assets/grovex-logo-firkant.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/grovex-logo.png" alt="GroveX logo" style="height: 38px;">
+      </a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <span></span><span></span><span></span><span></span>
+    </button>
+    <nav class="nav-drawer" id="navDrawer">
+      <a href="index.html">Forside</a>
+      <a href="om-os.html">Om os</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="#login">Login</a>
+    </nav>
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+  </header>
+  
+  <!-- Hero Slider -->
+  <section class="slider-section">
+    <div class="slider">
+      <div class="slider-track" id="sliderTrack"></div>
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
+  </section>
+
+  <!-- Section: Dashboard -->
+  <section class="dashboard-section">
+    <div class="dashboard-img">
+      <img src="assets/dashboard billede.png" alt="Dashboard">
+    </div>
+    <div class="dashboard-text">
+      <h2>Vi hjælper restauranter med deres systemer</h2>
+      <p>Vi kan optimere dine systemer og gøre din restaurant mere effektiv</p>
+    </div>
+  </section>
+
+  <!-- Section: Technology -->
+  <section class="tech-section">
+    <div class="tech-text">
+      <h2>Benytter den nyeste teknologi</h2>
+      <p>Vi bruger den nyeste teknologi til vores fordel</p>
+    </div>
+    <div class="tech-img">
+      <img src="assets/raspberrypi5.png" alt="Tech hardware">
+    </div>
+  </section>
+
+  <!-- Section: GroveX Branding & Specialization -->
+  <section class="grove-special">
+    <div class="grove-logo">
+      <img src="assets/grovex-logo.png" alt="GroveX logo" style="max-width: 90%; height: auto;">
+    </div>
+    <div class="special-text">
+      <h3>Specialisere os i det vi laver</h3>
+      <p>Vi specialiserer os i det vi laver</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h4>Har du lyst til at høre om hvad vi kan gøre for dig?</h4>
+    <div class="contact-card">
+      <div class="contact-info">
+        <div class="info-box">
+          <span class="info-icon"><img src="assets/pngwing-com-1-20.png" alt="Email icon" style="width: 25px; height: 25px;"></span>
+          <span><a href="tel:+4560571908">+45 60 57 19 08</a></span>
+        </div>
+        <div class="info-box">
+          <span class="info-icon"><img src="assets/node-22.png" alt="Email icon" style="width: 25px; height: 25px;"></span>
+          <span><a href="mailto:grovex.dk@gmail.com">grovex.dk@gmail.com</a> <br></span>
+        </div>
+      </div>
+      <div class="contact-divider">eller</div>
+      <form class="contact-form" id="contactForm">
+        <input type="text" id="name" name="name" placeholder="Navn" required>
+        <input type="text" id="company" name="company" placeholder="Navn på virksomheden" required>
+        <input type="tel" id="phone" name="phone" placeholder="Telefonnummer" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="date" id="date" name="date" required>
+        <input type="time" id="time" name="time" placeholder="Tidspunkt til mødet" required>
+        <button type="submit">Udfyld så kontakter vi dig!</button>
+        <div id="formStatus"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="om-os.html">Om os</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="#login">Login</a>
+    </div>
+    <div class="footer-contact">
+      <a class="footer-email" href="mailto:grovex.dk@gmail.com">grovex.dk@gmail.com</a>
+      <a class="footer-phone" href="tel:#31#60571908">+45 60 57 19 08</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
