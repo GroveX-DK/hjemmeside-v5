@@ -1,6 +1,6 @@
 // ===== Formular → VPS (GitHub Pages → LAMP) =====
-// Skift URL til din VPS endpoint
-const VPS_API_URL = 'https://76.13.133.224/api/form.php';
+// Brug HTTPS når VPS har SSL (GitHub Pages er HTTPS → mixed content blokeres ellers)
+const VPS_API_URL = 'http://76.13.133.224/api/form.php';
 
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
@@ -10,11 +10,13 @@ if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    // Saml alle formfelter dynamisk (virker for både index.html og kontakt.html)
     const formData = {};
-    ['name', 'company', 'phone', 'email', 'date', 'time'].forEach((key) => {
-      const el = contactForm.elements[key];
-      if (el && el.value) formData[key] = el.value.trim();
-    });
+    for (const el of contactForm.elements) {
+      if (el.name && el.value && el.type !== 'submit') {
+        formData[el.name] = el.value.trim();
+      }
+    }
 
     const statusEl = document.getElementById('formStatus') || (() => {
       const div = document.createElement('div');
@@ -33,10 +35,19 @@ if (contactForm) {
     try {
       const response = await fetch(VPS_API_URL, {
         method: 'POST',
+        mode: 'cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-      const result = await response.json();
+
+      let result;
+      const contentType = response.headers.get('content-type');
+      if (contentType && contentType.includes('application/json')) {
+        result = await response.json();
+      } else {
+        const text = await response.text();
+        throw new Error('Server returnerede ikke JSON. Svar: ' + text.slice(0, 100));
+      }
 
       if (response.ok && result.success) {
         statusEl.textContent = result.message || 'Tak! Vi kontakter dig snarest.';
