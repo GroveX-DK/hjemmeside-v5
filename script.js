@@ -1,6 +1,6 @@
 // ===== Formular → VPS (GitHub Pages → LAMP) =====
 // Brug HTTPS når VPS har SSL. URL = domæne + websti – IKKE filsti (/var/www/html/...)
-const VPS_API_URL = 'https://vestpåsyd.dk/api/form.php';
+const VPS_API_URL = 'https://xn--vestpsydgrovexdk-hob.dk/api/form.php';
 
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
