@@ -50,15 +50,12 @@ if (contactForm) {
       }
 
       if (response.ok && result.success) {
-        statusEl.textContent = result.message || 'Tak! Vi kontakter dig snarest.';
-        statusEl.classList.add('form-status--success');
-        if (result._debug) {
-          const dbInfo = ` (${result._debug.database}.forms, ID: ${result._debug.insert_id})`;
-          statusEl.textContent += dbInfo;
-          console.log('Formular gemt i:', result._debug.database + '.' + result._debug.table, 'ID:', result._debug.insert_id);
-        } else {
-          console.log('Server svar (ingen _debug):', result);
+        let msg = result.message || 'Tak! Vi kontakter dig snarest.';
+        if (result.insert_id) {
+          msg += ` Din henvendelse har ID: ${result.insert_id}.`;
         }
+        statusEl.textContent = msg;
+        statusEl.classList.add('form-status--success');
         contactForm.reset();
       } else {
         statusEl.textContent = result.message || 'Noget gik galt. Prøv igen senere.';
