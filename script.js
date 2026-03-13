@@ -1,6 +1,6 @@
 // ===== Formular → VPS (GitHub Pages → LAMP) =====
-// Brug HTTPS når VPS har SSL (GitHub Pages er HTTPS → mixed content blokeres ellers)
-const VPS_API_URL = 'https://xn--vestpsydgrovexdk-hob.dk/api/form.php';
+// Brug HTTPS når VPS har SSL. URL = domæne + websti – IKKE filsti (/var/www/html/...)
+const VPS_API_URL = 'https://vestpåsyd.dk/api/form.php';
 
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
@@ -52,6 +52,9 @@ if (contactForm) {
       if (response.ok && result.success) {
         statusEl.textContent = result.message || 'Tak! Vi kontakter dig snarest.';
         statusEl.classList.add('form-status--success');
+        if (result._debug) {
+          console.log('Formular gemt i:', result._debug.database + '.' + result._debug.table, 'ID:', result._debug.insert_id);
+        }
         contactForm.reset();
       } else {
         statusEl.textContent = result.message || 'Noget gik galt. Prøv igen senere.';
