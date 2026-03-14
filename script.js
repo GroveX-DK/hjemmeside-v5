@@ -1,6 +1,6 @@
 // ===== Formular → VPS (GitHub Pages → LAMP) =====
-// Brug HTTPS når VPS har SSL. URL = domæne + websti – IKKE filsti (/var/www/html/...)
-const VPS_API_URL = 'https://xn--vestpsydgrovexdk-hob.dk/api/form.php';
+// TEST upload: Skift til form-test.php – hvis du får version/insert_id, virker upload. Skift tilbage til form.php.
+const VPS_API_URL = 'https://xn--vestpsydgrovexdk-hob.dk/api/form-test.php';
 
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
@@ -40,18 +40,19 @@ if (contactForm) {
         body: JSON.stringify(formData),
       });
 
+      const rawText = await response.text();
+      console.log('Form POST response:', response.status, rawText);
+
       let result;
-      const contentType = response.headers.get('content-type');
-      if (contentType && contentType.includes('application/json')) {
-        result = await response.json();
-      } else {
-        const text = await response.text();
-        throw new Error('Server returnerede ikke JSON. Svar: ' + text.slice(0, 100));
+      try {
+        result = JSON.parse(rawText);
+      } catch {
+        throw new Error('Server returnerede ikke JSON. Svar: ' + rawText.slice(0, 150));
       }
 
       if (response.ok && result.success) {
         let msg = result.message || 'Tak! Vi kontakter dig snarest.';
-        if (result.insert_id) {
+        if (result.insert_id != null && result.insert_id > 0) {
           msg += ` Din henvendelse har ID: ${result.insert_id}.`;
         }
         statusEl.textContent = msg;
