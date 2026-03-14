@@ -1,6 +1,6 @@
 // ===== Formular → VPS (GitHub Pages → LAMP) =====
 // TEST upload: Skift til form-test.php – hvis du får version/insert_id, virker upload. Skift tilbage til form.php.
-const VPS_API_URL = 'https://xn--vestpsydgrovexdk-hob.dk/api/form-test.php';
+const VPS_API_URL = 'https://xn--vestpsydgrovexdk-hob.dk/var/www/html/api/form.php';
 
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
